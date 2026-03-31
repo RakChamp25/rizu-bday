@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday Rizu 💖</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  background: #0f0c29;
+}
+
+/* 🌌 ANIMATED BACKGROUND */
+body::before {
+  content: "";
+  position: fixed;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at 20% 20%, #ff6ec4, transparent),
+              radial-gradient(circle at 80% 30%, #7873f5, transparent),
+              radial-gradient(circle at 50% 80%, #42e695, transparent);
+  animation: moveBg 15s infinite alternate;
+  z-index: -1;
+}
+
+@keyframes moveBg {
+  0% { transform: translate(0,0); }
+  100% { transform: translate(-100px,-100px); }
+}
+
+/* ✨ PARTICLES */
+.particle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.6;
+  animation: float 10s linear infinite;
+}
+
+@keyframes float {
+  from { transform: translateY(100vh); }
+  to { transform: translateY(-10vh); }
+}
+
+/* 🧊 GLASS SECTIONS */
+section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 20px;
+}
+
+.card {
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(12px);
+  border-radius: 25px;
+  padding: 30px;
+  max-width: 800px;
+  color: white;
+  box-shadow: 0 0 40px rgba(255,255,255,0.1);
+  animation: fadeIn 2s ease;
+}
+
+/* TEXT */
+h1 {
+  font-size: 2.8em;
+  margin-bottom: 15px;
+}
+
+p {
+  font-size: 1.2em;
+  line-height: 1.6;
+}
+
+/* IMAGE */
+img {
+  width: 260px;
+  height: 330px;
+  object-fit: cover;
+  border-radius: 20px;
+  margin: 20px 0;
+  box-shadow: 0 0 30px rgba(255,255,255,0.4);
+  transition: transform 0.5s;
+}
+
+img:hover {
+  transform: scale(1.08);
+}
+
+/* BUTTON */
+button {
+  margin-top: 20px;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+  background: linear-gradient(45deg, #ff6ec4, #7873f5);
+  color: white;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* 🦋 BUTTERFLY */
+.butterfly {
+  position: absolute;
+  font-size: 22px;
+  animation: fly 12s linear infinite;
+}
+
+@keyframes fly {
+  0% { transform: translateY(100vh); }
+  100% { transform: translateY(-10vh) translateX(120px); }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ✨ PARTICLES -->
+<script>
+for(let i=0;i<25;i++){
+  let p=document.createElement("div");
+  p.className="particle";
+  p.style.left=Math.random()*100+"%";
+  p.style.animationDuration=(5+Math.random()*5)+"s";
+  document.body.appendChild(p);
+}
+</script>
+
+<!-- 🦋 Butterflies -->
+<div class="butterfly" style="left:15%;">🦋</div>
+<div class="butterfly" style="left:60%; animation-delay:3s;">🦋</div>
+
+<!-- 🌸 INTRO -->
+<section>
+  <div class="card">
+    <h1>Happy Birthday Rizu 💖</h1>
+    <p>
+      You are not just special… you are a whole universe of happiness.  
+      Today is all about celebrating YOU and the beautiful soul you are.
+    </p>
+  </div>
+</section>
+
+<!-- 📸 HER PIC -->
+<section>
+  <div class="card">
+    <h1>You 💫</h1>
+    <img src="rizu.jpeg">
+    <p>
+      Every time I see you, I realize how lucky I am.  
+      Your smile can light up even the darkest days.
+    </p>
+  </div>
+</section>
+
+<!-- 🏝️ BALI -->
+<section>
+  <div class="card">
+    <h1>Bali Ride 🌴</h1>
+    <img src="bali.jpeg">
+    <p>
+      That Bali ATV ride wasn’t just fun…  
+      it became one of my favorite memories with you.
+    </p>
+  </div>
+</section>
+
+<!-- 💑 FIRST MEET -->
+<section>
+  <div class="card">
+    <h1>Our First Meet 💞</h1>
+    <img src="firstmeet.jpeg">
+    <p>
+      That first meeting changed everything.  
+      I didn’t know it then… but you were going to mean so much to me.
+    </p>
+  </div>
+</section>
+
+<!-- 🎁 FINAL -->
+<section>
+  <div class="card">
+    <h1>For You 🎂</h1>
+    <p id="msg">Click below ❤️</p>
+    <button onclick="showMessage()">Open</button>
+  </div>
+</section>
+
+<script>
+function showMessage(){
+  document.getElementById("msg").innerText =
+ "Rizu, you are my happiness, my peace, and truly my favorite person in this world. Every moment with you feels special, and every memory we create means so much to me. I’m really grateful to have you in my life. You are a gem of my life, someone so rare and precious, and you mean everything to me. I hope your life is always filled with smiles, love, and endless happiness. Stay the same beautiful soul forever, because that’s what makes you so special. 💖 Happy Birthday!";
+}
+</script>
+
+</body>
+</html>
